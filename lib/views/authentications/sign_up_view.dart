@@ -7,8 +7,9 @@ import 'package:interview_test/widgets/app_button.dart';
 import 'package:interview_test/widgets/app_text.dart';
 import 'package:interview_test/widgets/social_media_button.dart';
 
+// ignore: must_be_immutable
 class SignUpView extends StatelessWidget {
-  const SignUpView({Key? key}) : super(key: key);
+  bool isPotrait = SizeConfig.orientation == Orientation.portrait;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +62,6 @@ class SignUpView extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-         
               SizedBox(
                 height: getProportionatefontSize(16),
               ),
@@ -94,7 +94,6 @@ class SignUpView extends StatelessWidget {
                   title: "Last Name",
                 ),
               ),
-
               SizedBox(
                 height: getProportionatefontSize(41),
               ),
@@ -158,7 +157,9 @@ class SignUpView extends StatelessWidget {
                 height: getProportionatefontSize(35),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: isPotrait
+                    ? MainAxisAlignment.spaceAround
+                    : MainAxisAlignment.spaceBetween,
                 children: [
                   SocialMediaButton(
                     callback: () {},
@@ -166,7 +167,7 @@ class SignUpView extends StatelessWidget {
                     hasBorder: false,
                     icon: 'assets/icons/google.svg',
                   ),
-                  Spacer(),
+                  isPotrait? Spacer():Container(),
                   SocialMediaButton(
                     buttonColor: Color(0xff1877F2),
                     textColor: Colors.white,
@@ -176,7 +177,46 @@ class SignUpView extends StatelessWidget {
                     icon: 'assets/icons/facebook.svg',
                   )
                 ],
-              )
+              ),
+              SizedBox(
+                height: getProportionatefontSize(57),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  AppText(
+                    fontSize: getProportionatefontSize(16),
+                    fontWeight: FontWeight.w400,
+                    content: "Already have an account?",
+                  ),
+                  SizedBox(
+                    height: getProportionatefontSize(16),
+                  ),
+                  Row(
+                    children: [
+                      //
+                      AppText(
+                        fontSize: getProportionatefontSize(16),
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.primaryColor,
+                        content: "LOGIN",
+                      ),
+                      SizedBox(
+                        width: getProportionatefontSize(5),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: AppColors.primaryColor,
+                        size: getProportionatefontSize(16),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: getProportionatefontSize(16),
+              ),
             ],
           ),
         ),

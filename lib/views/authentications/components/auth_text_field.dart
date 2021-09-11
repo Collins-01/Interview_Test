@@ -19,7 +19,7 @@ class AuthTextField extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       height: getProportionatefontSize(56),
-      width: SizeConfig.orientation==Orientation.portrait? getProportionatefontSize(343):SizeConfig.screenWidth!*0.80,
+      width: SizeConfig.orientation==Orientation.portrait? getProportionatefontSize(343):SizeConfig.screenWidth!,
       decoration: BoxDecoration(
         border: Border.all(
           color: Color(0xffC5CEE0),

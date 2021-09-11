@@ -27,208 +27,210 @@ class _HomeViewState extends State<HomeView> {
     SizeConfig().init(context);
     return SafeArea(
       top: false,
-
       child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: GestureDetector(
-              onTap: () {},
-              child: Icon(
-                CupertinoIcons.person,
-                color: AppColors.textColor,
-                size: getProportionatefontSize(15),
-              ),
-            ),
-          ),
-          title: Column(
-            children: [
-              AppText(
-                content: "Delivering to",
-                color: AppColors.primaryColor,
-                fontWeight: FontWeight.w700,
-                fontSize: getProportionatefontSize(12),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AppText(
-                    content: "170, Apata street, Somolu",
-                    fontSize: getProportionatefontSize(16),
-                    fontWeight: FontWeight.w700,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: getProportionatefontSize(5),
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_down,
-                        size: getProportionatefontSize(10),
-                        color: AppColors.textColor,
-                      )
-                    ],
-                  )
-                ],
-              )
-            ],
-          ),
-          centerTitle: true,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            leading: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: GestureDetector(
                 onTap: () {},
-                child: SvgPicture.asset('assets/icons/notifications.svg'),
+                child: Icon(
+                  CupertinoIcons.person,
+                  color: AppColors.textColor,
+                  size: getProportionatefontSize(15),
+                ),
               ),
             ),
-          ],
-        ),
-        body: Container(
-          child: SingleChildScrollView(
-            child: Column(
+            title: Column(
               children: [
-                //
-                SizedBox(
-                  height: getProportionatefontSize(24),
+                AppText(
+                  content: "Delivering to",
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.w700,
+                  fontSize: getProportionatefontSize(12),
                 ),
-                SearchField(),
-                SizedBox(
-                  height: getProportionatefontSize(24),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AppText(
+                      content: "170, Apata street, Somolu",
+                      fontSize: getProportionatefontSize(16),
+                      fontWeight: FontWeight.w700,
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: getProportionatefontSize(5),
+                        ),
+                        Icon(
+                          Icons.keyboard_arrow_down,
+                          size: getProportionatefontSize(10),
+                          color: AppColors.textColor,
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+            centerTitle: true,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: SvgPicture.asset('assets/icons/notifications.svg'),
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: List.generate(
-                      _items.length,
-                      (index) => GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _selectedIndex = index;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          margin: EdgeInsetsDirectional.all(10),
-                          height: getProportionatefontSize(41),
-                          width: getProportionatefontSize(119),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                              color: _selectedIndex == index
-                                  ? AppColors.primaryColor
-                                  : Color(0xffE54D3A).withOpacity(.1),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(6),
-                              )),
-                          duration: Duration(milliseconds: 350),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              //
-                              SvgPicture.asset("${_items[index]['icon']}"),
-                              SizedBox(
-                                width: getProportionatefontSize(7),
-                              ),
-                              AppText(
-                                content: "${_items[index]['title']}",
-                                fontSize: getProportionatefontSize(16),
-                                fontWeight: FontWeight.w500,
+              ),
+            ],
+          ),
+          body: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  //
+                  SizedBox(
+                    height: getProportionatefontSize(24),
+                  ),
+                  SearchField(),
+                  SizedBox(
+                    height: getProportionatefontSize(24),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: List.generate(
+                        _items.length,
+                        (index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _selectedIndex = index;
+                            });
+                          },
+                          child: AnimatedContainer(
+                            margin: EdgeInsetsDirectional.all(10),
+                            height: getProportionatefontSize(41),
+                            width: getProportionatefontSize(119),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
                                 color: _selectedIndex == index
-                                    ? Colors.white
-                                    : AppColors.textColor,
-                              )
-                            ],
+                                    ? AppColors.primaryColor
+                                    : Color(0xffE54D3A).withOpacity(.1),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(6),
+                                )),
+                            duration: Duration(milliseconds: 350),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                //
+                                SvgPicture.asset("${_items[index]['icon']}"),
+                                SizedBox(
+                                  width: getProportionatefontSize(7),
+                                ),
+                                AppText(
+                                  content: "${_items[index]['title']}",
+                                  fontSize: getProportionatefontSize(16),
+                                  fontWeight: FontWeight.w500,
+                                  color: _selectedIndex == index
+                                      ? Colors.white
+                                      : AppColors.textColor,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: getProportionatefontSize(15),
-                ),
-                Container(
-                    height: getProportionatefontSize(132),
-                    width: isPortrait
-                        ? getProportionatefontSize(335)
-                        : SizeConfig.screenWidth!,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(5),
+                  SizedBox(
+                    height: getProportionatefontSize(15),
+                  ),
+                  Container(
+                      height: getProportionatefontSize(132),
+                      width: isPortrait
+                          ? getProportionatefontSize(335)
+                          : SizeConfig.screenWidth!,
+                      decoration: BoxDecoration(
+                        // color: Colors.blue,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/images/advert.png'),
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5),
+                        ),
                       ),
-                    ),
-                    child: Container(
-                      margin: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: getProportionatefontSize(5),
-                          ),
-                          AppText(
-                            content: 'Get 10% off your first order!',
-                            fontSize: getProportionatefontSize(16),
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            height: getProportionatefontSize(5),
-                          ),
-                          AppText(
-                            content:
-                                'Use code code URSXVN on orders \nabove ₦5000',
-                            fontSize: getProportionatefontSize(12),
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
-                          Expanded(child: SizedBox()),
-                          Container(
-                            height: getProportionatefontSize(36),
-                            width: getProportionatefontSize(111),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: getProportionatefontSize(5),
                             ),
-                            child: AppText(
-                              content: 'Order Now',
-                              fontSize: getProportionatefontSize(15),
-                              fontWeight: FontWeight.w500,
+                            AppText(
+                              content: 'Get 10% off your first order!',
+                              fontSize: getProportionatefontSize(16),
+                              fontWeight: FontWeight.w600,
                               color: Colors.white,
                             ),
-                          )
-                        ],
-                      ),
-                    )),
-                SizedBox(
-                  height: getProportionatefontSize(15),
-                ),
-                ProductList(
-                  isPortrait: isPortrait,
-                  label: "Try it now",
-                ),
-                SizedBox(
-                  height: getProportionatefontSize(10),
-                ),
-                ProductList(
-                  isPortrait: isPortrait,
-                  label: "Try Something New",
-                ),
-                SizedBox(
-                  height: getProportionatefontSize(10),
-                ),
-                ProductList(
-                  isPortrait: isPortrait,
-                  label: "Closest to you",
-                ),
-              ],
+                            SizedBox(
+                              height: getProportionatefontSize(5),
+                            ),
+                            AppText(
+                              content:
+                                  'Use code code URSXVN on orders \nabove ₦5000',
+                              fontSize: getProportionatefontSize(12),
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
+                            Expanded(child: SizedBox()),
+                            Container(
+                              height: getProportionatefontSize(36),
+                              width: getProportionatefontSize(111),
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: AppColors.primaryColor,
+                              ),
+                              child: AppText(
+                                content: 'Order Now',
+                                fontSize: getProportionatefontSize(15),
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
+                      )),
+                  SizedBox(
+                    height: getProportionatefontSize(15),
+                  ),
+                  ProductList(
+                    isPortrait: isPortrait,
+                    label: "Try it now",
+                  ),
+                  SizedBox(
+                    height: getProportionatefontSize(10),
+                  ),
+                  ProductList(
+                    isPortrait: isPortrait,
+                    label: "Try Something New",
+                  ),
+                  SizedBox(
+                    height: getProportionatefontSize(10),
+                  ),
+                  ProductList(
+                    isPortrait: isPortrait,
+                    label: "Closest to you",
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        bottomNavigationBar: KButtomNav()
-      ),
+          bottomNavigationBar: KButtomNav()),
     );
   }
 }
