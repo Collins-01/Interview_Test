@@ -15,7 +15,7 @@ class SearchField extends StatelessWidget {
     return Container(
       height: getProportionatefontSize(48),
       width:
-          isPortrait ? getProportionatefontSize(335) : SizeConfig.screenWidth!,
+          isPortrait ? getProportionatefontSize(335) : SizeConfig.screenWidth!*0.90,
       decoration: BoxDecoration(
         border: Border.all(color: Color(0xffBDBDBD)),
         borderRadius: BorderRadius.all(

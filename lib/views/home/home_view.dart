@@ -20,7 +20,9 @@ class _HomeViewState extends State<HomeView> {
     {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'},
     {'icon': 'assets/icons/plate.svg', 'title': 'Catering'},
     {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'},
-    {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'}
+    {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'},
+    {'icon': 'assets/icons/plate.svg', 'title': 'Catering'},
+    {'icon': 'assets/icons/plate.svg', 'title': 'Catering'},
   ];
   @override
   Widget build(BuildContext context) {
@@ -88,12 +90,13 @@ class _HomeViewState extends State<HomeView> {
           body: Container(
             child: SingleChildScrollView(
               child: Column(
+                // crossAxisAlignment: C,
                 children: [
                   //
                   SizedBox(
                     height: getProportionatefontSize(24),
                   ),
-                  SearchField(),
+                  Center(child: SearchField()),
                   SizedBox(
                     height: getProportionatefontSize(24),
                   ),
