@@ -11,16 +11,15 @@ class Routings {
     switch (routeSettings.name) {
       case AppRoutes.HOMEVIEW:
         return MaterialPageRoute(builder: (_) => HomeView());
-        break;
+      
       case AppRoutes.SPLASHSCREEN_VIEW:
         return MaterialPageRoute(builder: (_) => SpalshScreenView());
-        break;
+      
       case AppRoutes.SIGN_UP_VIEW:
         return MaterialPageRoute(builder: (_) => SignUpView());
-        break;
       case AppRoutes.UNAUTHENTICATED_VIEW:
         return MaterialPageRoute(builder: (_) => UnAuthenticatedView());
-        break;
+     
       default: return MaterialPageRoute(builder: (_) => Scaffold(
         body: Center(
           child: AppText(

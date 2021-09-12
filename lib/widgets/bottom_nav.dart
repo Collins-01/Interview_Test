@@ -15,6 +15,7 @@ class KButtomNav extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/icons/home.svg'),
+              // ignore: deprecated_member_use
               title: AppText(
                 content: 'Home',
                 fontSize: getProportionatefontSize(12),
@@ -22,6 +23,7 @@ class KButtomNav extends StatelessWidget {
               )),
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/icons/orders.svg'),
+              // ignore: deprecated_member_use
               title: AppText(
                 content: 'Orders',
                 fontSize: getProportionatefontSize(12),
@@ -29,6 +31,7 @@ class KButtomNav extends StatelessWidget {
               )),
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/icons/location.svg'),
+              // ignore: deprecated_member_use
               title: AppText(
                 content: 'Location',
                 fontSize: getProportionatefontSize(12),
@@ -36,6 +39,7 @@ class KButtomNav extends StatelessWidget {
               )),
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/icons/more.svg'),
+              // ignore: deprecated_member_use
               title: AppText(
                 content: 'More',
                 fontSize: getProportionatefontSize(12),
