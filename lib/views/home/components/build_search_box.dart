@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:interview_test/utils/app_colors.dart';
 import 'package:interview_test/utils/kicons.dart';
 import 'package:interview_test/utils/size_config.dart';

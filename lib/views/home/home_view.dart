@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:interview_test/utils/app_colors.dart';
 import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/views/home/components/advert_box.dart';
-import 'package:interview_test/views/home/components/build_search_box.dart';
 import 'package:interview_test/views/home/components/home_banner.dart';
 import 'package:interview_test/views/home/components/product_list.dart';
 import 'package:interview_test/views/home/view_models/home_view_model.dart';
@@ -20,7 +19,6 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.width);
 
     SizeConfig().init(context);
     return ViewModelBuilder<HomeViewModel>.reactive(
@@ -31,6 +29,7 @@ class _HomeViewState extends State<HomeView> {
             child: Scaffold(
                 backgroundColor: AppColors.scaffoldColor,
                 appBar: AppBar(
+                  
                   backgroundColor: Colors.white,
                   leading: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
@@ -77,7 +76,7 @@ class _HomeViewState extends State<HomeView> {
                     ],
                   ),
                   centerTitle: true,
-                  elevation: 0.0,
+                  elevation: 1.0,
                   actions: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),

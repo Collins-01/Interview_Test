@@ -1,4 +1,3 @@
-import 'package:interview_test/views/authentications/unauthenticated_view.dart';
 
 class AppRoutes {
   static const HOMEVIEW='/homeView';

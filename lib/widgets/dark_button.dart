@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:interview_test/utils/app_colors.dart';
 import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/widgets/app_text.dart';
 

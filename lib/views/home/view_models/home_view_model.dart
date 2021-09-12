@@ -6,7 +6,7 @@ class HomeViewModel extends BaseViewModel {
   bool isPortrait = SizeConfig.orientation == Orientation.portrait;
   int selectedIndex = 0;
   List<Map<String, String>> items = [
-    {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'},
+    {'icon': 'assets/icons/dishes.svg', 'title': 'Resturant'},
     {'icon': 'assets/icons/plate.svg', 'title': 'Catering'},
     {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'},
     {'icon': 'assets/icons/plate.svg', 'title': 'Resturant'},

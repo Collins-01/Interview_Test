@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/views/authentications/components/build_play_button.dart';
-import 'package:interview_test/views/authentications/sign_up_view.dart';
 import 'package:interview_test/views/authentications/view_models/unauthenticated_viewmodel.dart';
 import 'package:interview_test/widgets/app_button.dart';
 import 'package:interview_test/widgets/app_text.dart';
