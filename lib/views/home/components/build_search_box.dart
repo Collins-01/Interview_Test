@@ -16,6 +16,7 @@ class SearchField extends StatelessWidget {
 
     SizeConfig().init(context);
     return Container(
+      margin: SizeConfig.appPadding,
       height: getProportionatefontSize(48),
       width:
           isPortrait ? getProportionatefontSize(335) : SizeConfig.screenWidth!,

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:interview_test/utils/app_colors.dart';
+import 'package:interview_test/utils/dummy_images.dart';
 import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/views/home/components/product_card.dart';
 import 'package:interview_test/widgets/app_text.dart';
@@ -46,11 +47,15 @@ class ProductList extends StatelessWidget {
 
               //
             ),
-          
+
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: List.generate(7, (index) => ProductCard()),
+                children: List.generate(
+                    dummyImage.length,
+                    (index) => ProductCard(
+                          image: dummyImage[index],
+                        )),
               ),
             ),
           ],

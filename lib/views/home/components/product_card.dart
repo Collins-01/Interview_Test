@@ -7,6 +7,9 @@ import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/widgets/app_text.dart';
 
 class ProductCard extends StatelessWidget {
+  final String image;
+
+  const ProductCard({Key? key,required this.image}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -16,7 +19,6 @@ class ProductCard extends StatelessWidget {
       height: getProportionatefontSize(220),
       // color: Colors.blue,
       width: getProportionatefontSize(261),
-      
 
       child: Column(
         children: [
@@ -26,7 +28,7 @@ class ProductCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/food.png'),
+                    image: AssetImage(image),
                     fit: BoxFit.cover),
               ),
               child: Stack(
@@ -36,7 +38,7 @@ class ProductCard extends StatelessWidget {
                     padding: const EdgeInsets.all(15.0),
                     child: ClipRRect(
                       child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaY: 10,sigmaX: 10),
+                        filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
                         child: Container(
                           child: AppText(
                             content: '30-40mins',
@@ -47,7 +49,8 @@ class ProductCard extends StatelessWidget {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.4),
-                              borderRadius: BorderRadius.all(Radius.circular(6))),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6))),
                           height: getProportionatefontSize(40),
                           width: getProportionatefontSize(110),
                         ),
