@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:interview_test/utils/app_colors.dart';
@@ -5,15 +7,16 @@ import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/widgets/app_text.dart';
 
 class ProductCard extends StatelessWidget {
- 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      height: getProportionatefontSize(223),
+      // margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: SizeConfig.appPadding,
+      height: getProportionatefontSize(220),
       // color: Colors.blue,
       width: getProportionatefontSize(261),
+      
 
       child: Column(
         children: [
@@ -23,32 +26,32 @@ class ProductCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
                 image: DecorationImage(
-                  image: AssetImage('assets/images/food.png'),
-                  fit: BoxFit.cover
-                ),
+                    image: AssetImage('assets/images/food.png'),
+                    fit: BoxFit.cover),
               ),
               child: Stack(
                 alignment: Alignment.bottomRight,
                 children: [
-                
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      child: AppText(
-                        content: '30-40mins',
-                        fontSize:
-                            getProportionatefontSize(14),
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.textColor,
+                    padding: const EdgeInsets.all(15.0),
+                    child: ClipRRect(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaY: 10,sigmaX: 10),
+                        child: Container(
+                          child: AppText(
+                            content: '30-40mins',
+                            fontSize: getProportionatefontSize(12),
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.4),
+                              borderRadius: BorderRadius.all(Radius.circular(6))),
+                          height: getProportionatefontSize(40),
+                          width: getProportionatefontSize(110),
+                        ),
                       ),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color:
-                              Colors.white.withOpacity(0.4),
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(6))),
-                      height: getProportionatefontSize(40),
-                      width: getProportionatefontSize(110),
                     ),
                   ),
                 ],
@@ -93,7 +96,9 @@ class ProductCard extends StatelessWidget {
                     ),
                     Spacer(),
                     SvgPicture.asset(
-                        'assets/icons/star.svg',height: getProportionatefontSize(10),),
+                      'assets/icons/star.svg',
+                      height: getProportionatefontSize(10),
+                    ),
                     SizedBox(
                       width: getProportionatefontSize(4),
                     ),

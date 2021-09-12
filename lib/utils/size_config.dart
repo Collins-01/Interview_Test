@@ -6,7 +6,7 @@ class SizeConfig {
   static double? screenHeight;
   static double? defaultSize;
   static Orientation? orientation;
-  static const EdgeInsets appPadding=EdgeInsets.all(16);
+  static const EdgeInsets appPadding=EdgeInsets.all(15);
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
