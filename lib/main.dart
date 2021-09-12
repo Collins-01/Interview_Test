@@ -10,10 +10,11 @@ import 'package:interview_test/views/authentications/splash_screen_view.dart';
 void main() {
   setUpLocator();
   runApp(
-  DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => MyApp(),
-    ));
+     MyApp());
+  // DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: (context) => MyApp(),
+  //   ));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: MyTheme().themeData,
       onGenerateRoute: Routings.generateRoutes,
       home: SpalshScreenView(),
-      builder: DevicePreview.appBuilder,
+      // builder: DevicePreview.appBuilder,
 
     
       navigatorKey: locator<NavigationService>().navigationKey,

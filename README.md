@@ -1,16 +1,18 @@
-# interview_test
+# Food Delivery UI.
+A food delivery UI, built with flutter.
 
-A new Flutter project.
+## Tools
+- figma `design`
+- provider `state-management`
+- stacked `MVVM achitecture`
+- get_it `dependency injection`
+- flutter `v2.2.3 - mobile sdk`
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![one](./screenshots/1.png)
+![one](./screenshots/2.png)
+![one](./screenshots/3.png)
+![one](./screenshots/4.png)
+![one](./screenshots/5.png)
+![one](./screenshots/6.png)
+![one](./screenshots/7.png)
+![one](./screenshots/8.png)
