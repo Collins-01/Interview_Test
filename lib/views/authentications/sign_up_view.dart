@@ -16,6 +16,7 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return ViewModelBuilder<SignUpViewModel>.reactive(
+     
       viewModelBuilder: ()=>SignUpViewModel(),
       builder: (context, model,_) {
         return Scaffold(

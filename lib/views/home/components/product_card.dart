@@ -11,15 +11,15 @@ class ProductCard extends StatelessWidget {
     SizeConfig().init(context);
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 5),
-      height: getProportionatefontSize(213),
+      height: getProportionatefontSize(223),
       // color: Colors.blue,
-      width: getProportionatefontSize(375),
+      width: getProportionatefontSize(261),
 
       child: Column(
         children: [
           Container(
               height: getProportionatefontSize(148),
-              width: getProportionatefontSize(375),
+              width: getProportionatefontSize(261),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
                 image: DecorationImage(
@@ -86,7 +86,7 @@ class ProductCard extends StatelessWidget {
                   children: [
                     //
                     AppText(
-                      content: 'Jollof rice and chicken',
+                      content: 'kilimanjaro',
                       fontSize: getProportionatefontSize(12),
                       fontWeight: FontWeight.w400,
                       color: Color(0xff9E9E9E),

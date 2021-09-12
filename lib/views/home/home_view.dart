@@ -26,6 +26,8 @@ class _HomeViewState extends State<HomeView> {
   ];
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
+    double padding=15;
     SizeConfig().init(context);
     return SafeArea(
       top: false,
@@ -45,6 +47,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             title: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppText(
                   content: "Delivering to",
@@ -77,33 +80,40 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
             centerTitle: true,
+            elevation: 0.0,
+            // bottom:  PreferredSize(child: Divider(
+            //   color: Color(0xffE0E0E0),
+            // ), preferredSize: Size.fromHeight(getProportionateScreenHeight(inputHeight))),
             actions: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: GestureDetector(
                   onTap: () {},
-                  child: SvgPicture.asset('assets/icons/notifications.svg'),
+                  child: SvgPicture.asset('assets/icons/notifications.svg',height: getProportionateAdjustedfontSize(23),),
                 ),
               ),
             ],
           ),
           body: Container(
+            // height: SizeConfig.screenHeight,
+            // width: SizeConfig.screenWidth,
+            margin: EdgeInsets.all(padding),
             child: SingleChildScrollView(
               child: Column(
-                // crossAxisAlignment: C,
+               
                 children: [
                   //
                   SizedBox(
                     height: getProportionatefontSize(24),
                   ),
-                  Center(child: SearchField()),
+                  SearchField(),
                   SizedBox(
                     height: getProportionatefontSize(24),
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      // crossAxisAlignment: CrossAxisAlignment.start,
                       children: List.generate(
                         _items.length,
                         (index) => GestureDetector(
@@ -113,7 +123,7 @@ class _HomeViewState extends State<HomeView> {
                             });
                           },
                           child: AnimatedContainer(
-                            margin: EdgeInsetsDirectional.all(10),
+                            margin: EdgeInsets.only(right: 12),
                             height: getProportionatefontSize(41),
                             width: getProportionatefontSize(119),
                             alignment: Alignment.center,
@@ -129,7 +139,7 @@ class _HomeViewState extends State<HomeView> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 //
-                                SvgPicture.asset("${_items[index]['icon']}"),
+                                SvgPicture.asset("${_items[index]['icon']}",color:  _selectedIndex == index?Colors.white:AppColors.textColor,height: getProportionateAdjustedfontSize(24),),
                                 SizedBox(
                                   width: getProportionatefontSize(7),
                                 ),
@@ -151,6 +161,7 @@ class _HomeViewState extends State<HomeView> {
                   SizedBox(
                     height: getProportionatefontSize(15),
                   ),
+                  //advert
                   Container(
                       height: getProportionatefontSize(132),
                       width: isPortrait

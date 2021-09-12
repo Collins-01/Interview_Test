@@ -34,7 +34,7 @@ class UnAuthenticatedView extends StatelessWidget {
                 isPotrait?Container():SizedBox(height: getProportionatefontSize(60),),
                 Center(child: BuildPlayButton()),
                 SizedBox(
-                  height: getProportionatefontSize(50),
+                  height: isPotrait? getProportionatefontSize(50):getProportionatefontSize(20),
                 ),
                 Column(
                   children: [
@@ -88,7 +88,7 @@ class UnAuthenticatedView extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
-                  height: getProportionateAdjustedfontSize(100),
+                  height: getProportionateAdjustedfontSize(70),
                 )
               ],
             ),

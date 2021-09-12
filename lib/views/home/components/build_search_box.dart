@@ -15,7 +15,7 @@ class SearchField extends StatelessWidget {
     return Container(
       height: getProportionatefontSize(48),
       width:
-          isPortrait ? getProportionatefontSize(335) : SizeConfig.screenWidth!*0.90,
+          isPortrait ? getProportionatefontSize(335) : SizeConfig.screenWidth!,
       decoration: BoxDecoration(
         border: Border.all(color: Color(0xffBDBDBD)),
         borderRadius: BorderRadius.all(
@@ -25,12 +25,14 @@ class SearchField extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           // suffixIcon:Icon(CupertinoIcons.filt),
+          // suffix: SvgPicture.asset('assets/icons/Filter.svg',height: getProportionateAdjustedfontSize(24),),
           prefixIcon: Icon(
             CupertinoIcons.search,
+            size: getProportionateAdjustedfontSize(24),
             color: Color(0xffBDBDBD),
           ),
           contentPadding:
-              const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              const EdgeInsets.symmetric(vertical: 15,horizontal: 10),
           border: InputBorder.none,
           hintText: 'What are you gonna order today?',
           hintStyle: TextStyle(

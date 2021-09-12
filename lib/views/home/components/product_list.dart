@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:interview_test/utils/app_colors.dart';
 import 'package:interview_test/utils/size_config.dart';
 import 'package:interview_test/views/home/components/product_card.dart';
@@ -21,11 +21,10 @@ class ProductList extends StatelessWidget {
     SizeConfig().init(context);
     return Container(
       height: getProportionatefontSize(278),
-      width:
-          isPortrait ? getProportionatefontSize(375) : SizeConfig.screenWidth!,
+      // width:
+      //     isPortrait ? getProportionatefontSize(375) : SizeConfig.screenWidth!,
       decoration: BoxDecoration(color: Color(0xffFFFFFF)),
       child: Container(
-        margin: SizeConfig.appPadding,
         child: Column(
           children: [
             //

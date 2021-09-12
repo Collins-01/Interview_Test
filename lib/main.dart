@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:interview_test/locator.dart';
 import 'package:interview_test/routings.dart';
@@ -7,7 +9,11 @@ import 'package:interview_test/views/authentications/splash_screen_view.dart';
 
 void main() {
   setUpLocator();
-  runApp(MyApp());
+  runApp(
+  DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => MyApp(),
+    ));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,6 +26,9 @@ class MyApp extends StatelessWidget {
       theme: MyTheme().themeData,
       onGenerateRoute: Routings.generateRoutes,
       home: SpalshScreenView(),
+      builder: DevicePreview.appBuilder,
+
+    
       navigatorKey: locator<NavigationService>().navigationKey,
     );
   }
